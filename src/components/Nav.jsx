@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useLoginContextValues } from "../context/LoginContext";
 import Toast from "./Toast";
 import users from "../data/userData";
@@ -50,9 +50,10 @@ const Nav = () => {
     setPassword('');
     toggleModal(false);
   };
-
+  const navigate = useNavigate();
   const handleLogout = () => {
     toggleLogin();
+    navigate('/')
     setToastMessage('User Logged out.');
   };
 
