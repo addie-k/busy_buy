@@ -2,7 +2,7 @@ import React from "react";
 import { useOutletContext } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
-  const { setCart, setToastMessage } = useOutletContext();
+  const { setCart, setToastMessage,isLoggedIn } = useOutletContext();
   const cartHandler = (name)=>{
     setCart((prevState)=>[...prevState,product])
     setToastMessage(name+"  added to cart")
@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
         <p className="text-sm text-gray-600 mt-2 line-clamp-2">{product.description}</p>
         <div className="flex justify-between items-center mt-4">
           <span className="text-lg font-semibold text-gray-900">₹{product.price}</span>
-          <button onClick={()=>cartHandler(product.name)} className="px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <button onClick={()=>cartHandler(product.name)} className="px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400" disabled={!isLoggedIn}>
             Add to Cart
           </button>
         </div>

@@ -222,7 +222,7 @@ const Nav = () => {
           </div>
         )}
       </nav>
-      <Outlet context={{cart,setCart,toastMessage, setToastMessage, orders,setOrders}}/>
+      <Outlet context={{cart,setCart,toastMessage, setToastMessage, orders,setOrders,isLoggedIn}}/>
     </>
   );
 };
