@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
       setCart((prevState)=>[...prevState,product])
       setToastMessage(name+"  added to cart")
     }else{
-      setToastMessage("Login First")
+      setToastMessage("You need to login first.")
 
     }
     
