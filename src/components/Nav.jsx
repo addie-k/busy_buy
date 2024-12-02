@@ -160,7 +160,7 @@ const Nav = () => {
                     id="email"
                     className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-black"
                     placeholder="Enter your email"
-                    value={email}
+                    value={email||'adi@gmail.com'}
                     onChange={(e) => setEmail(e.target.value)} // Handle email input change
                   />
                 </div>
@@ -178,7 +178,7 @@ const Nav = () => {
                     id="password"
                     className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-black"
                     placeholder="Enter your password"
-                    value={password}
+                    value={password||'adi}
                     onChange={(e) => setPassword(e.target.value)} // Handle password input change
                   />
                 </div>
